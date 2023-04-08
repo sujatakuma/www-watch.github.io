@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: rgb(168, 173, 177);
+    background-image:url(https://cdn.wallpapersafari.com/28/98/pLrR6Y.jpg) ;
+    /*background: linear-gradient(to right, red, yellow);*/
+}/*header{
+    font: 'raleway', sans-serif;
+            color: rgba(0, 0, 0, .5, );
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: .5em;
+            top: 15%;
+           
+        }*/
+
+.clock{
+    margin-left: 10%;
+    top: 60px;
+    position: relative;
+    width: 280px;
+    height: 280px;
+    background-color: #c9d5e0;
+    justify-content: center;
+    align-items:  center;
+    display: flex;
+    border-radius: 50px;
+    box-shadow: 30px 30px 30px -10px rgba(0,0,0,0.15),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255,255,255,0.55),
+    inset -1px -1px 10px rgba(0,0,0,0.2);
+}
+.clock::before{
+    content:'';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgb(184, 184, 16);
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 0 0 1px rgb(184, 184, 16),
+    0 0 0 3px #fff,
+    0 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.clock .numbers{
+    position: absolute;
+    inset: 35px;
+    border-radius: 50%;
+    background-color: rgb(158, 8, 138);
+    box-shadow: 5px 5px 15px  rgb(189, 61, 172),
+    inset 5px 5px 5px rgba(255,255,255,0.55),
+    -6px -6px 10px rgba(255,255,255,1);
+
+
+
+}.clock .numbers span{
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+    color: white;
+    font-size: 1.25em;
+    transform: rotate(calc(90deg * var(--i)));
+}
+.clock .numbers span b {
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-90deg * var(--i)));
+}
+.clock .numbers::before{
+    position: absolute;
+    content:'';
+    inset: 35px;
+    border-radius: 50%;
+    background: linear-gradient(rgb(8, 8, 226),rgb(233, 233, 24));
+    animation: animate 2s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.clock .numbers::after{
+    content:'';
+    position: absolute;
+    inset: 38px;
+    border-radius: 50%;
+    background:  rgb(158, 8, 138);
+}
+.clock .numbers .circle {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    
+}
+
+
+.clock .numbers .circle i{
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    background-color:  white;
+    transform-origin: bottom;
+    
+    
+  
+}
+.clock .numbers .circle#hr i{
+    transform: scaleY(0.4);
+    width: 4px;
+    
+}
+.clock .numbers .circle#mn i{
+    transform: scaleY(0.48);
+
+}
+.clock .numbers .circle#sc i{
+    transform: scaleY(0.55);
+    width: 2px;
+    background: blue;
+    
+    box-shadow: 0 30px 0 rgb(6, 6, 243);
+}@media screen and (max-width: 1020px){
+    body{
+        width: 800px;
+        background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm378-09-kny9fh3b.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=b3cbd9864d44dcb5955218db25f65541);
+        background-size: cover;
+    }.clock{
+        position: fixed;
+        width: 280px;
+        height: 280px;
+        margin-left: 10%;
+    /*top: 30px;
+    position: relative;
+    width: 280px;
+    height: 280px;
+    background-color: #c9d5e0;
+    justify-content: center;
+    align-items:  center;
+    display: flex;
+    border-radius: 50px;
+    box-shadow: 30px 30px 30px -10px rgba(0,0,0,0.15),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255,255,255,0.55),
+    inset -1px -1px 10px rgba(0,0,0,0.2);*/
+    }
+    
+}@media screen and (max-width: 900px){
+    body{
+        width: 700px;
+}.clock{
+       position: fixed;
+        width: 250px;
+        height: 250px;
+    }
+
+}@media screen and (max-width: 480px){
+    body {
+        width: auto;
+        background-image: url(https://w0.peakpx.com/wallpaper/952/170/HD-wallpaper-hexagon-background-abstract-dark-hexagon-red-thumbnail.jpg);
+        background-size: cover;
+    }.clock{
+       position: fixed;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+</style>
+<body>
+    <div class="clock">
+        <div class="numbers">
+
+            <span style="--i:0;"><b>12</b></span>
+
+            <span style="--i:1;"><b>3</b></span>
+            <span style="--i:2;"><b>6</b></span>
+            <span style="--i:3;"><b>9</b></span>
+
+            <div class="circle" id="hr"><i></i></div>
+            <div class="circle" id="mn"><i></i></div>
+            <div class="circle" id="sc"><i></i></div>
+        </div>
+
+    </div>
+    <script>
+        var hour = document.querySelector('#hr');
+        var minutes = document.querySelector('#mn');
+        var seconds = document.querySelector('#sc');
+
+        setInterval(() => {
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * 6;
+            let ss = day.getSeconds() * 6;
+
+            hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+        });
+
+
+    </script>
+
+    
+</body>
+</html>
